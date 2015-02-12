@@ -13,6 +13,9 @@ class MainHandler(webapp2.RequestHandler):
         <title>Simple Form</title>
     </head>
     <body>'''
+        home_body = '''
+        <h1>Sign up form</h1>
+        <p>Sign up here to recieve information relevant to you and your primary interest.</p>'''
         page_form = '''<form method="GET">
             <label>Name: </label><input type="text" name="user"/></br>
             <label>Email: </label><input type="email" name="email"/></br>
@@ -42,7 +45,7 @@ class MainHandler(webapp2.RequestHandler):
             <p>Age: ''' + age + '''</p>
             <p>Interest: ''' + interest + '''</p>''' + page_close)
         else:
-            self.response.write(page_head + page_form + page_close)
+            self.response.write(page_head + home_body + page_form + page_close)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
