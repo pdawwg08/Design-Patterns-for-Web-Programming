@@ -13,11 +13,28 @@ class MainHandler(webapp2.RequestHandler):
         <title>Simple Form</title>'''
         home_style = '''
         <style>
+            body {
+                background:#77c4d3;
+            }
+            h1 {
+                background: #ea2e49;
+                color: #fff;
+                display: inline-block;
+                margin-bottom: 1em;
+                padding: 0.5em 1em;
+            }
         </style>
     </head>
     <body>'''
         signed_up_style = '''
         <style>
+            body {
+                background-color: linen;
+            }
+            h1 {
+                color: maroon;
+                margin-left: 40px;
+            }
         </style>
     </head>
     <body>'''
@@ -57,7 +74,7 @@ class MainHandler(webapp2.RequestHandler):
             Age: ''' + age + '''</br>
             Interest: ''' + interest + '''</p>''' + page_close)
         else:
-            self.response.write(page_head + home_body + page_form + page_close)
+            self.response.write(page_head + home_style + home_body + page_form + page_close)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
