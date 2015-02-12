@@ -10,7 +10,15 @@ class MainHandler(webapp2.RequestHandler):
         page_head = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Simple Form</title>
+        <title>Simple Form</title>'''
+        home_style = '''
+        <style>
+        </style>
+    </head>
+    <body>'''
+        signed_up_style = '''
+        <style>
+        </style>
     </head>
     <body>'''
         home_body = '''
@@ -43,11 +51,11 @@ class MainHandler(webapp2.RequestHandler):
             age = self.request.GET['age']
             interest = self.request.GET['interest']
             self.response.write(page_head + signed_up_body + '''
-            <p>Name: ''' + user + '''</p>
-            <p>Email: ''' + email + '''</p>
-            <p>Gender: ''' + sex + '''</p>
-            <p>Age: ''' + age + '''</p>
-            <p>Interest: ''' + interest + '''</p>''' + page_close)
+            <p>Name: ''' + user + '''</br>
+            Email: ''' + email + '''</br>
+            Gender: ''' + sex + '''</br>
+            Age: ''' + age + '''</br>
+            Interest: ''' + interest + '''</p>''' + page_close)
         else:
             self.response.write(page_head + home_body + page_form + page_close)
 
