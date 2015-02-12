@@ -16,7 +16,11 @@ class MainHandler(webapp2.RequestHandler):
         home_body = '''
         <h1>Sign up form</h1>
         <p>Sign up here to recieve information relevant to you and your primary interest.</p>'''
-        page_form = '''<form method="GET">
+        signed_up_body = '''
+        <h1>Thanks for signing up!</h1>
+        <p>Below is the information that you put in the form when you signed up:</p>'''
+        page_form = '''
+        <form method="GET">
             <label>Name: </label><input type="text" name="user"/></br>
             <label>Email: </label><input type="email" name="email"/></br>
             <label>Male </label><input type="radio" value="Male" name="sex"/></br>
@@ -27,9 +31,9 @@ class MainHandler(webapp2.RequestHandler):
                 <option value="movies">Movies</option>
                 <option value="music">Music</option>
             </select></br>
-            <input type="submit" value="Submit" />'''
+            <input type="submit" value="Submit" />
+        </form>'''
         page_close = '''
-        </form>
     </body>
 </html>'''
         if self.request.GET:
@@ -38,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
             sex = self.request.GET['sex']
             age = self.request.GET['age']
             interest = self.request.GET['interest']
-            self.response.write(page_head + '''
+            self.response.write(page_head + signed_up_body + '''
             <p>Name: ''' + user + '''</p>
             <p>Email: ''' + email + '''</p>
             <p>Gender: ''' + sex + '''</p>
