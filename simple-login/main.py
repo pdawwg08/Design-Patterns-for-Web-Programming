@@ -15,12 +15,22 @@ class MainHandler(webapp2.RequestHandler):
         <style>
             body {
                 background:#77c4d3;
+                font-family: verdana, arial, sans-serif;
+                font-weight: 200;
             }
             h1 {
                 background: #ea2e49;
-                color: #fff;
                 display: inline-block;
                 margin-bottom: 1em;
+                padding: 0.5em 1em;
+                color:#fff;
+            }
+            h2 {
+                font-weight:normal;
+                color: #fff;
+            }
+            form {
+                background: rgba(246,247,146,0.9);
                 padding: 0.5em 1em;
             }
         </style>
@@ -29,21 +39,34 @@ class MainHandler(webapp2.RequestHandler):
         signed_up_style = '''
         <style>
             body {
-                background-color: linen;
+                background:#77c4d3;
+                font-family: verdana, arial, sans-serif;
+                font-weight: 200;
             }
             h1 {
-                color: maroon;
-                margin-left: 40px;
+                background: #ea2e49;
+                display: inline-block;
+                margin-bottom: 1em;
+                padding: 0.5em 1em;
+                color:#fff;
+            }
+            h2 {
+                font-weight:normal;
+                color: #fff;
+            }
+            p {
+                background: rgba(246,247,146,0.9);
+                padding: 0.5em 1em;
             }
         </style>
     </head>
     <body>'''
         home_body = '''
         <h1>Sign up form</h1>
-        <p>Sign up here to recieve information relevant to you and your primary interest.</p>'''
+        <h2>Sign up here to recieve information relevant to you and your primary interest.</h2>'''
         signed_up_body = '''
         <h1>Thanks for signing up!</h1>
-        <p>Below is the information that you put in the form when you signed up:</p>'''
+        <h2>Below is the information that you put in the form when you signed up:</h2>'''
         page_form = '''
         <form method="GET">
             <label>Name: </label><input type="text" name="user"/></br>
@@ -67,7 +90,7 @@ class MainHandler(webapp2.RequestHandler):
             sex = self.request.GET['sex']
             age = self.request.GET['age']
             interest = self.request.GET['interest']
-            self.response.write(page_head + signed_up_body + '''
+            self.response.write(page_head + signed_up_style + signed_up_body + '''
             <p>Name: ''' + user + '''</br>
             Email: ''' + email + '''</br>
             Gender: ''' + sex + '''</br>
