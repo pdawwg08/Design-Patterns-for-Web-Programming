@@ -10,63 +10,21 @@ class MainHandler(webapp2.RequestHandler):
         page_head = '''<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Simple Form</title>'''
+        <title>Simple Form</title>''' #basic head
         home_style = '''
-        <style>
-            body {
-                background:#77c4d3;
-                font-family: verdana, arial, sans-serif;
-                font-weight: 200;
-            }
-            h1 {
-                background: #ea2e49;
-                display: inline-block;
-                margin-bottom: 1em;
-                padding: 0.5em 1em;
-                color:#fff;
-            }
-            h2 {
-                font-weight:normal;
-                color: #fff;
-            }
-            form {
-                background: rgba(246,247,146,0.9);
-                padding: 0.5em 1em;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="home.css">
     </head>
-    <body>'''
+    <body>''' #link to home.css
         signed_up_style = '''
-        <style>
-            body {
-                background:#77c4d3;
-                font-family: verdana, arial, sans-serif;
-                font-weight: 200;
-            }
-            h1 {
-                background: #ea2e49;
-                display: inline-block;
-                margin-bottom: 1em;
-                padding: 0.5em 1em;
-                color:#fff;
-            }
-            h2 {
-                font-weight:normal;
-                color: #fff;
-            }
-            p {
-                background: rgba(246,247,146,0.9);
-                padding: 0.5em 1em;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="signed_up.css">
     </head>
-    <body>'''
+    <body>''' #link to signed_up.css
         home_body = '''
         <h1>Sign up form</h1>
-        <h2>Sign up here to recieve information relevant to you and your primary interest.</h2>'''
+        <h2>Sign up here to recieve information relevant to you and your primary interest.</h2>'''#home page body
         signed_up_body = '''
         <h1>Thanks for signing up!</h1>
-        <h2>Below is the information that you put in the form when you signed up:</h2>'''
+        <h2>Below is the information that you put in the form when you signed up:</h2>''' #signed up page body
         page_form = '''
         <form method="GET">
             <label>Name: </label><input type="text" name="user"/></br>
@@ -80,24 +38,24 @@ class MainHandler(webapp2.RequestHandler):
                 <option value="music">Music</option>
             </select></br>
             <input type="submit" value="Submit" />
-        </form>'''
+        </form>''' #simple form
         page_close = '''
     </body>
-</html>'''
-        if self.request.GET:
+</html>''' #close html
+        if self.request.GET: #if there is a GET
             user = self.request.GET['user']
             email = self.request.GET['email']
             sex = self.request.GET['sex']
             age = self.request.GET['age']
-            interest = self.request.GET['interest']
+            interest = self.request.GET['interest'] #set variables to equal the GET
             self.response.write(page_head + signed_up_style + signed_up_body + '''
             <p>Name: ''' + user + '''</br>
             Email: ''' + email + '''</br>
             Gender: ''' + sex + '''</br>
             Age: ''' + age + '''</br>
-            Interest: ''' + interest + '''</p>''' + page_close)
+            Interest: ''' + interest + '''</p>''' + page_close) #write the GET information to page
         else:
-            self.response.write(page_head + home_style + home_body + page_form + page_close)
+            self.response.write(page_head + home_style + home_body + page_form + page_close) #write home page with form
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
