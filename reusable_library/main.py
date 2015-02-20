@@ -5,23 +5,22 @@ reusable library
 '''
 import webapp2
 from library import ComicData
+from pages import ResultsPage, FormPage
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        r = ResultsPage()
+        f = FormPage()
+        c = ComicData()
         if self.request.GET: #if there is a GET
-            user = self.request.GET['user']
-            email = self.request.GET['email']
-            sex = self.request.GET['sex']
-            age = self.request.GET['age']
-            interest = self.request.GET['interest'] #set variables to equal the GET
-            self.response.write(page_head + signed_up_style + signed_up_body + '''
-            <p>Name: ''' + user + '''</br>
-            Email: ''' + email + '''</br>
-            Gender: ''' + sex + '''</br>
-            Age: ''' + age + '''</br>
-            Interest: ''' + interest + '''</p>''' + page_close) #write the GET information to page
+            c.series_title = self.request.GET['series_title']
+            c.year = self.request.GET['year']
+            c.month = self.request.GET['month']
+            c.issue_title = self.request.GET['issue_title']
+            c.issue_number = self.request.GET['issue_number'] #set variables to equal the GET
+            self.response.write(r.print_out) #write the GET information to page
         else:
-            self.response.write(page_head + home_style + home_body + page_form + page_close) #write home page with form
+            self.response.write(f.print_out) #write home page with form
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
