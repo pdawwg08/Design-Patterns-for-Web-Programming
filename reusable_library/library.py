@@ -5,3 +5,12 @@ class ComicData(object): #data object
         self.month = ""
         self.issue_title = ""
         self.issue_number = 0
+class ComicCollection(object):
+    def __init__(self):
+        self.__comic_list = []
+    def add_comic(self,a):
+        self.__comic_list.append(a)
+    def compile_list(self):
+        output = ""
+        for comic in self.__comic_list:
+            output += "Issue: " + comic.issue_title + " (" comic.month + " " + str(comic.year) + ")<br />" + comic.series_title + str(comic.issue_number)

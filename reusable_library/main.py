@@ -4,7 +4,7 @@ Preston Cain
 reusable library
 '''
 import webapp2
-from library import ComicData
+from library import ComicData, ComicCollection
 from pages import ResultsPage, FormPage
 
 class MainHandler(webapp2.RequestHandler):
@@ -12,12 +12,15 @@ class MainHandler(webapp2.RequestHandler):
         r = ResultsPage()
         f = FormPage()
         c = ComicData()
+        lib = ComicCollection()
         if self.request.GET: #if there is a GET
             c.series_title = self.request.GET['series_title']
             c.year = self.request.GET['year']
             c.month = self.request.GET['month']
             c.issue_title = self.request.GET['issue_title']
-            c.issue_number = self.request.GET['issue_number'] #set variables to equal the GET
+            c.issue_number = self.request.GET['issue_number']
+            lib.add_comic(c)#set variables to equal the GET
+            r.body = lib.compile_list()
             self.response.write(r.print_out) #write the GET information to page
         else:
             self.response.write(f.print_out) #write home page with form
