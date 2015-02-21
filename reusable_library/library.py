@@ -12,5 +12,5 @@ class ComicCollection(object):
         self.__comic_list.append(a)
     def compile_list(self):
         output = ""
-        for comic in self.__comic_list:
-            output += "Issue: " + comic.issue_title + " (" comic.month + " " + str(comic.year) + ")<br />" + comic.series_title + str(comic.issue_number)
+        for com in range (len (self.__comic_list)):
+            output += "Issue: " + self.__comic_list[com].issue_title + " (" self.__comic_list[com].month + " " + str(self.__comic_list[com].year) + ")<br />" + self.__comic_list[com].series_title + str(self.__comic_list[com].issue_number)
