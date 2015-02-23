@@ -14,3 +14,4 @@ class ComicCollection(object):
         output = ""
         for comic in self.__comic_list:
             output += "Issue: " + comic.issue_title + " (" + comic.month + " " + str(comic.year) + ")<br />" + comic.series_title + str(comic.issue_number)
+            return output

@@ -9,8 +9,8 @@ from pages import ResultsPage, FormPage
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        r = ResultsPage()
-        f = FormPage()
+        rp = ResultsPage()
+        fp = FormPage()
         c = ComicData()
         lib = ComicCollection()
         if self.request.GET: #if there is a GET
@@ -21,9 +21,9 @@ class MainHandler(webapp2.RequestHandler):
             c.issue_number = self.request.GET['issue_number']
             lib.add_comic(c)#set variables to equal the GET
             r.body = lib.compile_list()
-            self.response.write(r.print_out) #write the GET information to page
+            self.response.write(rp.print_out_results()) #write the GET information to page
         else:
-            self.response.write(f.print_out) #write home page with form
+            self.response.write(fp.print_out_form()) #write home page with form
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
