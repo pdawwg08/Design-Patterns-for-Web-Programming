@@ -13,5 +13,5 @@ class ComicCollection(object):
     def compile_list(self):
         output = ""
         for comic in self.__comic_list:
-            output += "Issue: " + comic.issue_title + " (" + comic.month + " " + str(comic.year) + ")<br />" + comic.series_title + str(comic.issue_number)
+            output += "Issue: " + comic.issue_title + " (" + comic.month +")<br />" + comic.series_title + " " + str(comic.issue_number) + ", " + comic.artist
             return output

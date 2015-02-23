@@ -15,12 +15,12 @@ class MainHandler(webapp2.RequestHandler):
         lib = ComicCollection()
         if self.request.GET: #if there is a GET
             c.series_title = self.request.GET['series_title']
-            c.year = self.request.GET['year']
             c.month = self.request.GET['month']
             c.issue_title = self.request.GET['issue_title']
             c.issue_number = self.request.GET['issue_number']
+            c.artist = self.request.GET['artist']
             lib.add_comic(c)#set variables to equal the GET
-            r.body = lib.compile_list()
+            rp.body = lib.compile_list()
             self.response.write(rp.print_out_results()) #write the GET information to page
         else:
             self.response.write(fp.print_out_form()) #write home page with form

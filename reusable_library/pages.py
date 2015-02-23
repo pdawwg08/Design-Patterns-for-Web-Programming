@@ -40,6 +40,7 @@ class FormPage(object):
             <label>Issue Number: </label><input type="number" name="issue_number"/></br>
             <label>Issue Title: </label><input type="text" name="issue_title"/></br>
             <label>Month: </label><input type="month" name="month"/></br>
+            <label>Artist: </label><input type="text" name="artist"/></br>
             <input type="submit" value="Submit" />
         </form>
         """
