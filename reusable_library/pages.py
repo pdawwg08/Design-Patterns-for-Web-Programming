@@ -1,13 +1,13 @@
 class ResultsPage(object):
     def __init__(self):
         self.title ="Welcome"
-        self.css ="css/styles.css"
+        self.css ="css/style.css"
         self.head = """
 <!DOCTYPE HTML>
 <html>
     <head>
         <title>{self.title}</title>
-        <link href="styles.css" rel="stylesheet" type"{self.css}" />
+        <link rel="stylesheet" type="text/css" href="{self.css}">
     </head>
     <body>
         """
@@ -19,6 +19,7 @@ class ResultsPage(object):
         """
     def print_out_results(self):
         all = self.head + self.body + self.error + self.close
+        all = all.format(**locals())
         return all
     
 class FormPage(object):
@@ -40,7 +41,7 @@ class FormPage(object):
             <label>Issue Number: </label><input type="number" name="issue_number"/></br>
             <label>Issue Title: </label><input type="text" name="issue_title"/></br>
             <label>Month: </label><input type="month" name="month"/></br>
-            <label>Artist: </label><input type="text" name="artist"/></br>
+            <label>Writer: </label><input type="text" name="writer"/></br>
             <input type="submit" value="Submit" />
         </form>
         """
