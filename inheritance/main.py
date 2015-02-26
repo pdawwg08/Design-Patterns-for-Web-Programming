@@ -4,7 +4,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
         p.inputs = [["first_name","text","First Name"],["last_name","text","Last Name"],["Submit","submit"]]
-        self.response.write(p.print_out_form())
+        self.response.write(p.print_out())
         
 class Page(object):
     def __init__(self):
@@ -42,7 +42,7 @@ class FormPage(Page):
                 self._form_inputs += '"placeholder="' + item[2] +'" />'
             except:
                 self._form_inputs += '" />'
-    def print_out_form(self):
+    def print_out(self):
         return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
 
 app = webapp2.WSGIApplication([
