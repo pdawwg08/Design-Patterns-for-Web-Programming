@@ -8,35 +8,35 @@ class ComicData(object): #data object
         
     @property
     def series_title(self):
-        pass
+        return self.__series_title
     @series_title.setter
     def series_title(self, y):
         self.__series_title = y
         
     @property
     def month(self):
-        pass
+        return self.__month
     @month.setter
     def month(self, y):
         self.__month = y
 
     @property
     def issue_title(self):
-        pass
+        return self.__issue_title
     @issue_title.setter
     def issue_title(self, y):
         self.__issue_title = y
 
     @property
     def issue_number(self):
-        pass
+        return self.__issue_number
     @issue_number.setter
     def issue_number(self, y):
         self.__issue_number = y
 
     @property
     def writer(self):
-        pass
+        return self.__writer
     @writer.setter
     def writer(self, y):
         self.__writer = y
