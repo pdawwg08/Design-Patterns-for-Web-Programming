@@ -1,10 +1,46 @@
 class ComicData(object): #data object
     def __init__(self):
-        self.series_title =""
-        self.month = ""
+        self.__series_title =""
+        self.__month = ""
         self.__issue_title = ""
-        self.issue_number = 0
-        self.writer = ""
+        self.__issue_number = 0
+        self.__writer = ""
+        
+    @property
+    def series_title(self):
+        pass
+    @series_title.setter
+    def series_title(self, y):
+        self.__series_title = y
+        
+    @property
+    def month(self):
+        pass
+    @month.setter
+    def month(self, y):
+        self.__month = y
+
+    @property
+    def issue_title(self):
+        pass
+    @issue_title.setter
+    def issue_title(self, y):
+        self.__issue_title = y
+
+    @property
+    def issue_number(self):
+        pass
+    @issue_number.setter
+    def issue_number(self, y):
+        self.__issue_number = y
+
+    @property
+    def writer(self):
+        pass
+    @writer.setter
+    def writer(self, y):
+        self.__writer = y
+        
 class ComicCollection(object):
     def __init__(self):
         self.__comic_list = []
