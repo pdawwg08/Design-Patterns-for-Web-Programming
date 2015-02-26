@@ -12,14 +12,14 @@ class ResultsPage(object):
     <body>
     <h1>My comics list:</h1>
         """
-        self.body = ""
+        self.body = "" #the list of comics is displayed here
         self.error = ""
         self.close = """
     </body>
 </html>
         """
     def print_out_results(self):
-        all = self.head + self.body + self.error + self.close
+        all = self.head + self.body + self.error + self.close #write out the page
         all = all.format(**locals())
         return all
     
@@ -47,13 +47,13 @@ class FormPage(object):
             <input type="submit" value="Submit" />
         </form>
         <h2>My comics list:</h2>
-        """
-        self.body = ""
+        """ #the form goes here
+        self.body = "" #the list of comics is displayed here
         self.error = ""
         self.close = """
     </body>
 </html>"""
     def print_out_form(self):
-        all = self.head + self.body + self.error + self.close
+        all = self.head + self.body + self.error + self.close #write out the page
         all = all.format(**locals())
         return all
