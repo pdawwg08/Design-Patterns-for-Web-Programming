@@ -160,3 +160,18 @@ $ 4,995.00
 <button type="submit">Submit</button>
 </form>
 </section>""" #signup.html
+        self.search_bar = """<link href="css/searchMeme.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.searchMeme.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var search = $('input').searchMeme({ onSearch: function (searchText) {
+                setTimeout(function () {
+                    search.searchMeme({ searchComplete: true });
+                    alert('Search completed.');
+                }, 3000);
+            }
+            , buttonPlacement: 'left', button: 'red'
+            });
+        });
+    </script>"""
