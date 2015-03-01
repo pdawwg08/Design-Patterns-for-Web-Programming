@@ -1,4 +1,6 @@
-"""<header>
+class PageData(object):
+    def __init__(self):
+        self.home = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
@@ -20,9 +22,7 @@ Search Now!
 </button>
 </form>
 </section>""" #index.html
-
-
-"""<header>
+        self.results = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
@@ -72,9 +72,7 @@ Search Now!
 </div>
 
 </section>""" #results.html
-
-
-"""<header>
+        self.details = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
@@ -97,9 +95,7 @@ This product hasn't been rated yet. <a href="login.html">Write a Review</a>
 <br/>
 $ 4,995.00
 </section>""" #details.html
-
-
-"""<header>
+        self.favorites = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
@@ -117,9 +113,7 @@ $ 4,995.00
 <p>Leica MP .72 Rangefinder Film Camera, Black</p>
 </a>
 </section>""" #favorites.html
-
-
-"""<header>
+        self.login = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
@@ -143,9 +137,7 @@ $ 4,995.00
 <a href="signup.html">Sign up</a>
 </aside>
 </section>""" #login.html
-
-
-"""<header>
+        self.signup = """<header>
 <img id="Logo" src="Images/Neil_Lane_Logo.svg" alt="Neil Lane Logo"/>
 <nav>
 <a href="index.html">Home</a>
