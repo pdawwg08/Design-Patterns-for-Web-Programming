@@ -17,7 +17,7 @@ Find the best cameras with <br/>Neil Lane
 </h1>
 <form action="?title=Results">
 <input type="search"/>
-<button type="submit">
+<button type="submit" formmethod="get">
 Search Now!
 </button>
 </form>
