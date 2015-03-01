@@ -10,7 +10,7 @@ class PageData(object):
 <a href="?title=Login">Login</a>
 <a href="?title=Sign Up">Sign Up</a>
 </nav>
-</header>"""
+</header>""" #reusable header on every page
         self.home = """<section>
 <h1 id="huge">
 Find the best cameras with <br/>Neil Lane
@@ -22,7 +22,7 @@ Find the best cameras with <br/>Neil Lane
 Search Now!
 </button>
 </form>
-</section>""" #index.html
+</section>""" #first page that was index.html
         self.results = """<section class="white" id="results">
 <form method="GET">
 <input type="search"/>
@@ -66,7 +66,7 @@ Search Now!
 </a>
 </div>
 
-</section>""" #results.html
+</section>""" #second page that was results.html
         self.details = """<section class="white" id="details">
 <img src="Images/Leica_Large.png" alt="Leica Camera"/>
 <h2>Leica MP .72 Rangefinder Film Camera, Black</h2>
@@ -80,14 +80,14 @@ By Leica
 This product hasn't been rated yet. <a href="?title=Login">Write a Review</a>
 <br/>
 $ 4,995.00
-</section>""" #details.html
+</section>""" #third page that was details.html
         self.favorites = """<section class="white" id="favorites">
 <h1>Favorites</h1>
 <a href="?title=Details">
 <img src="Images/Leica.png" alt="Leica Camera"/>
 <p>Leica MP .72 Rangefinder Film Camera, Black</p>
 </a>
-</section>""" #favorites.html
+</section>""" #fourth page that was favorites.html
         self.login = """<section class="white" id="login">
 <h1>Login</h1>
 <form>
@@ -100,7 +100,7 @@ $ 4,995.00
 <aside>
 <a href="?title=Sign Up">Sign up</a>
 </aside>
-</section>""" #login.html
+</section>""" #fifth page that was login.html
         self.signup = """<section class="white">
 <h1>Sign Up</h1>
 <form>
@@ -112,4 +112,4 @@ $ 4,995.00
 <br/>
 <button type="submit">Submit</button>
 </form>
-</section>""" #signup.html
+</section>""" #sixth page that was signup.html
