@@ -5,7 +5,7 @@ class Page(object):
 <html>
     <head>
         <title>{self.title}</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="{self.css}" rel="stylesheet" type="text/css">
     </head>
     <body>"""
         
@@ -16,9 +16,11 @@ class Page(object):
         
     def print_out(self):
         return self._head + self._body + self._close
-class FormPage(Page):
+class CreatePage(Page):
     def __init__(self):
-        super(FormPage, self).__init__()
+        super(CreatePage, self).__init__()
+        self.css = "css/style.css"
+        self.title = "Welcome"
         self._form_open = '<form method="GET">'
         self._form_close = "</form>"
         self.__inputs = []
@@ -36,4 +38,6 @@ class FormPage(Page):
             except:
                 self._form_inputs += '" />'
     def print_out(self):
-        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        all = self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        all = all.format(**locals())
+        return all
