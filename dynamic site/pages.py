@@ -9,22 +9,22 @@ class Page(object):
         <title>{self.title}</title>
         <link href="{self.css}" rel="stylesheet" type="text/css">
     </head>
-    <body>"""
+    <body>""" #basic html opening
         
-        self._body = ""
+        self._body = "" #empty body
         self._close = """
     </body>
-</html>"""
+</html>""" # basic closing
         
     def print_out(self):
-        return self._head + self._body + self._close
+        return self._head + self._body + self._close #simple print out
 class CreatePage(Page):
     def __init__(self,title):
         super(CreatePage, self).__init__()
-        self.title = title
-        d = PageData()
-        if self.title == "Welcome":
-            self._body = d.header + d.home
+        self.title = title #use passed in title value from GET
+        d = PageData() #create instance
+        if self.title == "Welcome": #test which page to go to
+            self._body = d.header + d.home #combine the header and the appropriate page
         elif self.title == "Results":
             self._body = d.header + d.results
         elif self.title == "Details":
@@ -36,11 +36,11 @@ class CreatePage(Page):
         elif self.title == "Sign Up":
             self._body = d.header + d.signup
         else:
-            print "Title Error"
+            print "Title Error" #if nothing matches something went wrong in the title
         
-        self.css = "css/style.css"
+        self.css = "css/style.css" #css for the page
 
     def print_out(self):
         all = self._head + self._body + self._close
-        all = all.format(**locals())
+        all = all.format(**locals()) #fill in title and css
         return all
