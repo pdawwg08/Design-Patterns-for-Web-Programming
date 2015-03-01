@@ -24,7 +24,13 @@ Search Now!
 </form>
 </section>""" #index.html
         self.results = """<section class="white" id="results">
-<form  action="?title=Results"><input type="text" /></form>
+<form method="GET">
+<input type="search"/>
+<input type="hidden" name="title" value="Results"/>
+<button type="submit">
+Search Now!
+</button>
+</form>
 <div class="results">
 <a href="?title=Details">
 <img src="Images/Leica.png" alt="Leica Camera"/>
@@ -67,7 +73,9 @@ Search Now!
 Item: LC4916   Mfr: 10302
 <br/>
 By Leica
-<form action="?title=Favorites"><button>Add to favorites</button></form>
+<form method="GET">
+<input type="hidden" name="title" value="Favorites"/>
+<button>Add to favorites</button></form>
 <br/>
 This product hasn't been rated yet. <a href="?title=Login">Write a Review</a>
 <br/>
