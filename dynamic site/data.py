@@ -15,9 +15,9 @@ class PageData(object):
 <h1 id="huge">
 Find the best cameras with <br/>Neil Lane
 </h1>
-<form action="?title=Results">
+<form method="GET" action="?title=Results">
 <input type="search"/>
-<button type="submit" formmethod="get">
+<button type="submit">
 Search Now!
 </button>
 </form>
