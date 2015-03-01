@@ -19,7 +19,7 @@ class Page(object):
     def print_out(self):
         return self._head + self._body + self._close #simple print out
 class CreatePage(Page):
-    def __init__(self,title):
+    def __init__(self,title): #use passed in value of title
         super(CreatePage, self).__init__()
         self.title = title #use passed in title value from GET
         d = PageData() #create instance
