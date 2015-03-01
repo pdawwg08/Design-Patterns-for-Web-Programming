@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	width: 70%;
+	margin: 0 auto;
+	background: url(../Images/cityscapes-skyline-chicago-photography-grayscale-illinois.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#Logo {
+	float: left;
+	width:40%;
+	max-width:300px;
+}
+nav {
+	clear: left;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	background-color:#FFF;
+	border-radius: 4px;
+	padding: 6px;
+	max-width: 27em;
+}
+nav a {
+	text-decoration:none;
+	margin-left: 1em;
+	color:#000;
+}
+
+#huge {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:6em;
+	color:#FFF;
+	text-shadow: 0 3px 0 #999999, 0 15px 5px rgba(0,0,0,0.3), 10px 20px 5px rgba(0,0,0,0.15), -10px 20px 5px rgba(0,0,0,0.15);
+	margin:30px 0;
+}
+
+button {
+	background: #fff;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+	box-shadow: inset 0 0 1px 1px #f6f6f6;
+	color: #333;
+	font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+	padding: 8px 0 9px;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	width: 150px;
+}
+button:hover {
+	background: #d9d9d9;
+	-webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+	box-shadow: inset 0 0 1px 1px #eaeaea;
+	color: #222;
+}
+button:active {
+	background: #c0c0c0;
+	-webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+	box-shadow: inset 0 0 1px 1px #e3e3e3;
+	color: #000;
+}
+button a {
+	color:inherit;
+	text-decoration:none;
+}
+input {
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 3px #ddd;
+	border-radius: 4px;
+	padding: .5em 1em;
+}
+
+.white {
+	background-color:#FFF;
+	margin-top: 50px;
+	padding: 7%;
+	padding-bottom:200px;
+	border-radius: 4px;
+}
+/* Results page */
+
+#results img {
+	float:left;
+}
+.results {
+	clear:left;
+	height:160px;
+	padding-bottom: 30px;
+}
+
+#results div {
+	margin-bottom: 20px;
+}
+/* Details page */
+
+#details button {
+	display:block;
+}
+/* Sign Up */
+
+#login form {
+	float:left;
+}
+
+aside {
+	float:left;
+	padding-left:60px;
+}
